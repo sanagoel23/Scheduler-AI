@@ -116,3 +116,7 @@ Validation: `Conflict-free timetable generated successfully.`
 5. Continue until all subjects are assigned, or report that no solution exists for current slot count.
 
 
+## 🌐 Live Demo
+
+👉 [Click here to view the live application](https://scheduler-ai-vg8t.onrender.com)
+
