@@ -54,32 +54,6 @@ It supports two input styles:
 - `static/styles.css` -> Minimal professional styling
 - `static/app.js` -> Frontend logic and API integration
 
-## Setup Instructions
-
-1. Create and activate a virtual environment (recommended).
-2. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Run the server:
-
-```bash
-uvicorn app:app --reload
-```
-
-Alternative (recommended, one-command reliable startup):
-
-```bash
-bash run.sh
-```
-
-4. Open in browser:
-
-```text
-http://127.0.0.1:8000
-```
 
 ## Example Input/Output
 
