@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Exam Timetable Generator using CSP</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <div class="container">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <span class="brand-text">Timetable AI</span>
+        </div>
+        <nav class="topnav">
+          <a href="#">product</a>
+          <a href="#">about</a>
+          <a href="#">contacts</a>
+          <a href="#">blog</a>
+        </nav>
+        <div class="top-actions">
+          <button class="ghost" type="button">en</button>
+          <button class="ghost" type="button">academic mode</button>
+          <button class="accent" type="button">solve now</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <h1>Doing exam scheduling right</h1>
+        <p>
+          Generate conflict-free exam timetables using clear CSP logic:
+          variables, constraints, domains, and explainable assignments.
+        </p>
+      </section>
+
+      <main class="grid">
+        <section class="panel input-panel">
+          <div class="panel-head">
+            <h2>Input</h2>
+            <span class="pill">configure</span>
+          </div>
+
+          <label for="mode">Input Mode</label>
+          <select id="mode">
+            <option value="enrollments">Subject -> Students (Preferred)</option>
+            <option value="pairs">Subject Conflict Pairs</option>
+          </select>
+
+          <label for="slots">Number of Time Slots</label>
+          <input id="slots" type="number" min="1" max="20" value="4" />
+
+          <div id="enrollments-section">
+            <label for="enrollments-text">
+              Enter data (one line per subject): Subject: student1, student2, student3
+            </label>
+            <textarea id="enrollments-text" rows="10" placeholder="Math: S1, S2, S3&#10;Physics: S2, S4&#10;Chemistry: S1, S5"></textarea>
+          </div>
+
+          <div id="pairs-section" class="hidden">
+            <label for="subjects-text">Subjects (comma separated)</label>
+            <textarea id="subjects-text" rows="3" placeholder="Math, Physics, Chemistry, Biology"></textarea>
+
+            <label for="pairs-text">
+              Conflict pairs (one per line): SubjectA - SubjectB
+            </label>
+            <textarea id="pairs-text" rows="7" placeholder="Math - Physics&#10;Physics - Chemistry"></textarea>
+          </div>
+
+          <div class="actions">
+            <button id="sample-btn" class="secondary">Auto-generate Sample Data</button>
+            <button id="solve-btn">Solve using AI</button>
+          </div>
+          <p id="status" class="status"></p>
+        </section>
+
+        <section class="panel output-panel">
+          <div class="panel-head">
+            <h2>Output & Analysis</h2>
+            <span class="pill">results</span>
+          </div>
+
+          <div class="block">
+            <h3>Timetable</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Time Slot</th>
+                </tr>
+              </thead>
+              <tbody id="timetable-body">
+                <tr><td colspan="2" class="muted">No result yet.</td></tr>
+              </tbody>
+            </table>
+            <p id="validation" class="validation muted">Validation message will appear here.</p>
+          </div>
+
+          <div class="block">
+            <h3>Algorithm Performance</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Algorithm</th>
+                  <th>Time (ms)</th>
+                  <th>Recursive Calls</th>
+                  <th>Constraint Checks</th>
+                </tr>
+              </thead>
+              <tbody id="metrics-body">
+                <tr><td colspan="4" class="muted">No performance data yet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="block">
+            <h3>Conflicts Explained</h3>
+            <ul id="conflict-list" class="explain-list">
+              <li class="muted">Conflict reasons will appear here.</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3>Assignment Explanation</h3>
+            <ul id="steps-list" class="explain-list">
+              <li class="muted">Assignment steps will appear here.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
