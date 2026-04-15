@@ -115,8 +115,4 @@ Validation: `Conflict-free timetable generated successfully.`
 4. Use **Forward Checking** to remove invalid slots from neighboring subjects after each assignment.
 5. Continue until all subjects are assigned, or report that no solution exists for current slot count.
 
-## Why This Is Viva-Friendly
 
-- Direct mapping between CSP theory and implementation
-- Human-readable conflict reasons and assignment steps
-- Clean UI with transparent outputs and measurable performance
